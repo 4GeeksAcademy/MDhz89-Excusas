@@ -10,11 +10,15 @@ window.onload = function() {
     "while I was praying"
   ];
 
-  let rwh = Math.floor(Math.random() * who.length);
-  let ra = Math.floor(Math.random() * action.length);
-  let rwa = Math.floor(Math.random() * what.length);
-  let rwhe = Math.floor(Math.random() * when.length);
+  function getRandomIndex(length) {
+    return Math.floor(Math.random() * length);
+  }
 
-  document.querySelector("#excusa").innerHTML =
-    who[rwh] + " " + action[ra] + " " + what[rwa] + " " + when[rwhe];
+ 
+  const excuse = `${who[getRandomIndex(who.length)]} ${
+    action[getRandomIndex(action.length)]
+  } ${what[getRandomIndex(what.length)]} ${when[getRandomIndex(when.length)]}`;
+
+  
+  document.querySelector("#excusa").innerHTML = excuse;
 };
